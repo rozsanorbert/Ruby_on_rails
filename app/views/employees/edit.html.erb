@@ -1,0 +1,40 @@
+<div class="container text-center">
+  <br><br>
+<h3>Alkalmazott adatainak szerkesztése</h3>
+  <br><br>
+<%= form_for :employee, url: edit_office_employee_path(@employee), method: :patch do |employee| %>
+  <% if @employee.errors.any? %>
+      <p class="text-danger">A név, a születés, és a lakhely mezők kitöltése kötelező!</p>
+  <% end %>
+  <p>
+    <%= employee.label :Név %><br>
+    <%= employee.text_field(:name, {:class => 'col-sm-4'}) %>
+  </p>
+  <p>
+    <%= employee.label :Születés %><br>
+    <%= employee.text_field(:birth, {:class => 'col-sm-4'}) %>
+  </p>
+
+  <p>
+    <%= employee.label :Lakhely %><br>
+    <%= employee.text_field(:address, {:class => 'col-sm-4'}) %>
+  </p>
+
+  <p>
+    <%= employee.label :Telefonszám %><br>
+    <%= employee.text_field(:phone, {:class => 'col-sm-4'}) %>
+  </p>
+  <p>
+    <%= employee.label :Munkája %><br>
+    <%= employee.text_field(:job, {:class => 'col-sm-4'}) %>
+  </p>
+  <p>
+    <%= employee.label :Fizetés %><br>
+    <%= employee.text_field(:salary, {:class => 'col-sm-4'}) %>
+  </p>
+
+  <p>
+    <%= employee.submit("Új adatok elfogadása", {:class => 'btn btn-default'}) %>
+  </p>
+<% end %>
+</div>

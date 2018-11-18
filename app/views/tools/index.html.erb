@@ -1,0 +1,7 @@
+<h2>Eszközeink listája</h2>
+<li><%= link_to "Új eszköz felvétele", new_tool_path %></li>
+<% @tools.each do |tool| %>
+  <h3><%= tool.name %>, <%= tool.quantity %>, , <%= tool.office_id %></h3>
+  <%= link_to "További adatok", edit_tool_path(tool), :class => 'btn btn-default' %>
+  <%= link_to "Törlés", tool, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

@@ -1,0 +1,84 @@
+<div class="container text-center">
+  <br>
+  <div class="row">
+    <span class="col-lg-12 border-bottom border-dark">
+<h2><%= @office.city %>, <%= @office.country %></h2>
+<p><p><%= @office.address %></p></p>
+<%= link_to "Szerkesztés", edit_office_path(@office), :class => 'btn btn-default' %><br><br>
+<%= link_to "Iroda törlése", office_path(@office),
+            method: :delete,
+            data: {confirm: 'Are you sure?'},
+            :class => 'btn btn-danger' %>
+    </span>
+  </div>
+  <br><br>
+  <div class="row">
+    <span class="col-lg-12 border-bottom border-dark">
+<h3>Eszközök</h3>
+  <br>
+  <%= link_to "Új eszköz felvétele", new_office_tool_path(@office), :class => 'btn btn-default' %>
+      <br><br>
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Eszköz neve</th>
+      <th scope="col">Mennyiség</th>
+      <th scope="col">Szerkesztés</th>
+      <th scope="col">Törlés</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @office.tools.each do |tool| %>
+    <tr>
+      <td><%= tool.name %></td>
+      <td><%= tool.quantity %></td>
+      <td><%= link_to "Szerkesztés", office_tool_path(tool), :class => 'btn btn-default' %></td>
+      <td><%= link_to "Törlés", office_tool_path(@office),
+                      method: :delete,
+                      data: {confirm: 'Are you sure?'},
+                      :class => 'text-danger' %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+      </span>
+  </div>
+
+  <br><br>
+  <div class="row">
+    <span class="col-lg-12 border-bottom border-dark">
+<h3>Alkalmazottak</h3>
+      <br>
+
+      <%= link_to "Új alkalmazott felvétele", new_office_employee_path(@office), :class => 'btn btn-default' %>
+      <br><br>
+
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Alkalmazott neve</th>
+      <th scope="col">Munkakör</th>
+      <th scope="col">Fizetés</th>
+      <th scope="col">Egyéb adatok</th>
+      <th scope="col">Törlés</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @office.employees.each do |employee| %>
+  <tr>
+      <td><%= employee.name %></td>
+      <td><%= employee.job %></td>
+      <td><%= employee.salary %></td>
+      <td><%= link_to "Egyéb adatok, szerkesztés", office_employee_path(employee), :class => 'btn btn-default' %></td>
+      <td><%= link_to "Törlés", office_employee_path(@office),
+                      method: :delete,
+                      data: {confirm: 'Are you sure?'},
+                      :class => 'text-danger' %></td>
+    </tr>
+<% end %>
+</tbody>
+</table>
+
+    </span>
+  </div>
+</div>

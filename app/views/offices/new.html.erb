@@ -1,0 +1,28 @@
+<div class="container text-center">
+  <br><br>
+<h2>Új iroda felvétele</h2>
+  <br><br>
+<%= form_for :office, url: offices_path do |office| %>
+  <% if @office.errors.any? %>
+      <p class="text-danger">Kérem töltse ki az összes mezőt!</p>
+  <% end %>
+  <p>
+    <%= office.label :Ország %><br>
+    <%= office.text_field(:country, {:class => 'col-sm-4'}) %>
+  </p>
+
+  <p>
+    <%= office.label :Város %><br>
+    <%= office.text_field(:city, {:class => 'col-sm-4'}) %>
+  </p>
+
+  <p>
+    <%= office.label :Cím %><br>
+    <%= office.text_field(:address, {:class => 'col-sm-4'}) %>
+  </p>
+
+  <p>
+    <%= office.submit("Új Iroda létrehozása", {:class => 'btn btn-primary'}) %>
+  </p>
+<% end %>
+</div>

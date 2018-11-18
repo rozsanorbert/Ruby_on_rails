@@ -1,0 +1,13 @@
+<div class="container text-center">
+  <br>
+<h2 class="border-bottom border-dark">Az irodáink listája</h2>
+<% @offices.each do |office| %>
+    <div class="row">
+    <span class="col-lg-12 border-bottom border-dark">
+  <h3><%= office.city %>, <%= office.country %></h3>
+  <p><%= office.address %></p>
+  <%= link_to "Alkalmazottak, eszközök", office_path(office), :class => 'btn btn-default' %>
+    </span>
+    </div>
+<% end %>
+</div>

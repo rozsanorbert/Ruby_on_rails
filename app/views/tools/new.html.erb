@@ -1,0 +1,22 @@
+<div class="container text-center">
+  <br><br>
+<h3>Új eszköz felvétele</h3>
+  <br><br>
+<%= form_for([@office, @office.tools.build]) do |tool| %>
+  <% if @tool.errors.any? %>
+      <p class="text-danger">Mindkét mező kitöltése kötelező!</p>
+  <% end %>
+  <p>
+    <%= tool.label :Név %><br>
+    <%= tool.text_field(:name, {:class => 'col-sm-4'}) %>
+  </p>
+  <p>
+    <%= tool.label :Mennyiség %><br>
+    <%= tool.text_field(:quantity, {:class => 'col-sm-4'}) %>
+  </p>
+
+  <p>
+    <%= tool.submit("Új eszköz létrehozása", {:class => 'btn btn-default'}) %>
+  </p>
+<% end %>
+</div>

@@ -1,0 +1,11 @@
+<div class="container text-center">
+  <br><br>
+<h2><%= @employee.name %></h2>
+  <br>
+  <p>Születési dátum: <%= @employee.birth %></p>
+  <p>Lakhely: <%= @employee.address %></p>
+  <p>Telefonszám: <%= @employee.phone %></p>
+  <p>Munkakör, munka: <%= @employee.job %></p>
+  <p>Bruttó órabér: <%= @employee.salary %></p>
+<%= link_to "Szerkesztés", edit_office_employee_path(@employee), :class => 'btn btn-default' %>
+</div>

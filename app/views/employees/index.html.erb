@@ -1,0 +1,8 @@
+<h2>Alkalmazottak listája</h2>
+<li><%= link_to "Új alkalmazott felvétele", new_employee_path %></li>
+<% @employees.each do |employee| %>
+  <h3><%= employee.name %></h3>
+  <p><%= employee.birth %>, <%= employee.address %>, <%= employee.phone %></p>
+  <p><%= employee.job %>, <%= employee.salary %></p>
+  <p> Office id: <%= employee.office_id %></p>
+<% end %>

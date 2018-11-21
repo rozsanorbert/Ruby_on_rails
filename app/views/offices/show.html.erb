@@ -33,7 +33,7 @@
       <td><%= tool.name %></td>
       <td><%= tool.quantity %></td>
       <td><%= link_to "Szerkesztés", office_tool_path(tool), :class => 'btn btn-default' %></td>
-      <td><%= link_to "Törlés", office_tool_path(@office),
+      <td><%= link_to "Törlés", office_tool_path(tool),
                       method: :delete,
                       data: {confirm: 'Are you sure?'},
                       :class => 'text-danger' %></td>
@@ -70,7 +70,7 @@
       <td><%= employee.job %></td>
       <td><%= employee.salary %></td>
       <td><%= link_to "Egyéb adatok, szerkesztés", office_employee_path(employee), :class => 'btn btn-default' %></td>
-      <td><%= link_to "Törlés", office_employee_path(@office),
+      <td><%= link_to "Törlés", office_employee_path(employee),
                       method: :delete,
                       data: {confirm: 'Are you sure?'},
                       :class => 'text-danger' %></td>

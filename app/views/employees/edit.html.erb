@@ -2,7 +2,7 @@
   <br><br>
 <h3>Alkalmazott adatainak szerkesztése</h3>
   <br><br>
-<%= form_for :employee, url: edit_office_employee_path(@employee), method: :patch do |employee| %>
+<%= form_for :employee, url: office_employee_path(@employee), method: :patch do |employee| %>
   <% if @employee.errors.any? %>
       <p class="text-danger">A név, a születés, és a lakhely mezők kitöltése kötelező!</p>
   <% end %>

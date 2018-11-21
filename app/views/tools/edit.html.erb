@@ -2,7 +2,7 @@
   <br><br>
 <h3>Eszköz szerkesztése</h3>
   <br><br>
-<%= form_for :tool, url: edit_office_tool_path(@tool), method: :patch do |tool| %>
+<%= form_for :tool, url: office_tool_path(@tool), method: :patch do |tool| %>
   <% if @tool.errors.any? %>
       <p class="text-danger">Mindkét mező kitöltése kötelező!</p>
   <% end %>

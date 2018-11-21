@@ -25,11 +25,19 @@ class EmployeesController < ApplicationController
 
   def update
     @employee = Employee.find(params[:office_id])
-    if(@employee.update(tool_params))
+    @office = Office.find(params[:id])
+    if(@employee.update(employee_params))
       redirect_to office_path(@office)
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @employee = Employee.find(params[:office_id])
+    @office = Office.find(params[:id])
+    @employee.destroy
+    redirect_to office_path(@office)
   end
 
   private def employee_params

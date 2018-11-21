@@ -25,6 +25,7 @@ class ToolsController < ApplicationController
 
   def update
     @tool = Tool.find(params[:office_id])
+    @office = Office.find(params[:id])
     if(@tool.update(tool_params))
       redirect_to office_path(@office)
     else
@@ -34,7 +35,9 @@ class ToolsController < ApplicationController
 
   def destroy
     @tool = Tool.find(params[:office_id])
+    @office = Office.find(params[:id])
     @tool.destroy
+    redirect_to office_path(@office)
   end
 
   private def tool_params

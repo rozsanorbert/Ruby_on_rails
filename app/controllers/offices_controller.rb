@@ -35,7 +35,7 @@ class OfficesController < ApplicationController
   end
 
   def destroy
-    @office = Post.find(params[:id])
+    @office = Office.find(params[:id])
     @office.destroy
 
     redirect_to offices_path

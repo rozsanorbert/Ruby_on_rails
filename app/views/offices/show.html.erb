@@ -7,7 +7,7 @@
 <%= link_to "Szerkesztés", edit_office_path(@office), :class => 'btn btn-default' %><br><br>
 <%= link_to "Iroda törlése", office_path(@office),
             method: :delete,
-            data: {confirm: 'Are you sure?'},
+            data: {confirm: 'Biztosan törlöd?'},
             :class => 'btn btn-danger' %>
     </span>
   </div>
@@ -35,7 +35,7 @@
       <td><%= link_to "Szerkesztés", office_tool_path(tool), :class => 'btn btn-default' %></td>
       <td><%= link_to "Törlés", office_tool_path(tool),
                       method: :delete,
-                      data: {confirm: 'Are you sure?'},
+                      data: {confirm: 'Biztosan törlöd?'},
                       :class => 'text-danger' %></td>
     </tr>
 <% end %>
@@ -72,7 +72,7 @@
       <td><%= link_to "Egyéb adatok, szerkesztés", office_employee_path(employee), :class => 'btn btn-default' %></td>
       <td><%= link_to "Törlés", office_employee_path(employee),
                       method: :delete,
-                      data: {confirm: 'Are you sure?'},
+                      data: {confirm: 'Biztosan törlöd?'},
                       :class => 'text-danger' %></td>
     </tr>
 <% end %>
